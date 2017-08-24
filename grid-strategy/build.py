@@ -111,7 +111,8 @@ def pages(config):
     # Move the slides to index.html to update them
     logging.info('Moving slides from {} to index.html'.format(slides_loc))
 
-    shutil.move('index.html', 'index.html.bak')
+    if os.path.exists('index.html'):
+        shutil.move('index.html', 'index.html.bak')
     try:
         shutil.move(slides_loc, 'index.html')
 
