@@ -27,9 +27,9 @@ def fig_to_html(fig, style=None):
 
 
 def display_figures(*figs):
-    out_html_fmt = '<div style="text-align: center; width: 100%">{}<div style="clear: both;"/></div>'
+    out_html_fmt = '<div class="output_png" style="text-align: center; display: block; width: 100%">{}<div style="clear: both;"/></div>'
 
-    div_html = '<div style="display: inline-block; float:left; width: {}">{{}}</div>'
+    div_html = '<div style="display: inline-block; float:left; text-align: center; width: {}">{{}}</div>'
     div_html = div_html.format(str(98 // len(figs)) + '%')
 
     img_htmls = ''.join(div_html.format(fig_to_html(fig)) for fig in figs)

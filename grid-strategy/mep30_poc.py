@@ -18,8 +18,8 @@ class GridStrategy(metaclass=ABCMeta):
     you want to show. By default, it goes for a symmetrical arrangement that is
     nearly square (nearly equal in both dimensions).
     """
-    def __init__(*args, **kwargs):
-        print("Called")
+    def __init__(self, alignment='center'):
+        self.alignment=alignment
 
     def get_grid(self, n):
         """  Return a list of axes designed according to the strategy. """
@@ -71,13 +71,6 @@ class GridStrategy(metaclass=ABCMeta):
 class SquareStrategy(GridStrategy):
     SPECIAL_CASES = {3: (2, 1),
                      5: (2, 3)}
-
-    def __init__(self, alignment="center"):
-        """
-        :param alignment:
-            This can be "left", "right" or "center"
-        """
-        self.alignment = alignment
 
     @classmethod
     def get_grid_arrangement(cls, n):
@@ -302,7 +295,7 @@ class RectangularStrategy(GridStrategy):
         return tuple(x for i in range(y))
 
 
-def test_grid_arrangement(n, strategy, figsize=(12, 4)):
+def test_grid_arrangement(n, strategy, figsize=(14, 4)):
     fig = plt.figure(figsize=figsize)
 
     ax_specs = strategy.get_grid(n)
