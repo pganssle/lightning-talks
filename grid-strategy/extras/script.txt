@@ -1,0 +1,139 @@
+Slide 1 (Title) [00:45, 00:45]
+
+Hello, I'm Paul Ganssle, you may know me from my role as "mangled corpse number 7" on the show "Thomas the Tank Engine", but today I'm here to talk to you about something serious - time zones.
+
+Actually, before I keep going, I should tell you, nothing I say up here represents the opinions of my employer, Bloomberg.
+
+This talk is going to be a sort of deep-dive into working with time zones in Python, with examples from pytz and dateutil. By way of full disclosure, I maintain the library dateutil, and this talk came about because I've recently given our time zone classes a major re-working, so be warned about my potential bias.
+
+Slide 2-0 (Introduction)
+
+- UTC [00:45, 01:30]
+
+So to make sure we're all on the same page, I'll start off light with an intro to some time zone concepts. The first is UTC, which is the primary time standard against which other time zones are defined - it's called UTC because English speakers wanted to call it CUT - Coordinated Universal Time, and French speakers wanted to call it TUC - Temp Universel Coordonne, and in the true spirit of compromise, they chose an abbreviation that makes sense to no one. You'll also sometimes see this called Greenwich Mean Time, since it roughly corresponds with the older standard based on the time at the Royal Observatory in Greenwich, though interestingly, during the summer, the local time in Greenwich is UTC+1.
+
+- Time zones vs. Offsets [01:00, 02:30]
+
+The next concept is time zones and offsets.
+
+UTC-6 is an offset - it represents six hours behind UTC, not tied to any one place or any time of year.
+
+The US's Central time zone, on the other hand, is a time zone. It represents a set of rules for how to calculate local time. During the winter, it's UTC-6, during the summer it's UTC-5. It's followed in some parts of Indiana, but other parts have their own time zone (one without DST).
+
+ Often times you'll see CST used as a shorthand for Central time zone, though if you're being precise CST only refers to the winter portion of that zone. However, you should be aware that these three-letter identifiers by no means uniquely identify a zone. CST alone also refers to Cuba Standard time and China Standard Time, and there are *many* more examples like this.
+
+ Slide 2-1
+- Complicated time zones [00:30, 03:00]
+
+I'm sure this will be everybody's favorite part of the talk - all the crazy things people get up to with their time zones. If you're in this audience I'm sure I don't have to convince you that time zones are complicated and you really should be careful and use standard tools for dealing with them, but in case you want some examples to convince your friends - or some edge cases for your test suite - I've compiled a handy list of them here.
+
+- Non-integer offsets [00:30, 03:30]
+
+First up, something easy - non-integer number of hours! There are plenty of these in use today - zones with half hour offsets and even some 15 minute offsets. Generally, it's not a good idea to put any rules on what a "valid" offset can be, if you can avoid it - if you're looking at historical zones, you can even find many whose offset isn't even a whole number of minutes, like Liberia pre-1972.
+
+- Change of DST status without offset change [01:00, 04:30]
+
+Here's another interesting one - sometimes you can get time zones who switch their base offset *during* a daylight savings time transition, resulting in the DST status changing with no change to the UTC offset. This happened in Portugal in 1992, and they did it again when they changed it back in 1996 because the original change led to sunrises that ended after midnight.
+
+Slide 2-2
+- More than one DST transition per year [01:30, 06:00]
+
+Here's a fun one - not all zones have exactly two transitions per year. For example, since 2012, Morroco has had 2 DST transitions - they go onto summer time in April, then some time around July they switch back, then a month later it's back to summer time until September. Why all the funkiness? Morocco is a predominantly Muslim country, and during Ramadan Muslims can't eat until after sundown, so during Ramadan they prefer earlier sunsets. Note that since Ramadan is based on a lunar calendar, it drifts with respect to the Gregorian calendar, so if they keep this up, eventually they'll just be starting daylight savings time early or late.
+
+Slide 2-3
+- Missing Days [01:00, 07:00]
+
+- Double Days  [00:30, 07:30]
+
+Slide 2-4
+- Why do we need to work with time zones at all? [01:00, 08:30]
+
+Slide 3-0
+- Python's Time Zone Model [01:00, 09:30]
+
+Slide 3-1
+- An example tzinfo implementation [01:30, 11:00]
+
+Slide 4-0
+- Ambiguous times [00:30, 11:30]
+
+Slide 4-1
+- PEP-495: Local time disambiguation [01:30, 13:00]
+
+Slide 4-2
+- Comparing timezone-aware datetimes [01:00, 14:00]
+
+Slide 4-3
+- Comparing timezone-aware datetimes [00:45, 14:45]
+
+Slide 4-4
+- A curious case [01:00, 15:45]
+
+Slide 5-0
+- Imaginary Times [00:45, 16:30]
+
+Slide 5-1
+- Why it was non-transitive [01:15, 17:45]
+
+Slide 6-0
+- Working with time zones (dateutil) [01:30, 19:15]
+
+Slide 6-1
+- pytz  [0:30, 19:45]
+
+Slide 6-2
+- pytz's time zone model [01:15, 21:00]
+
+Slide 7-0
+- Handling ambiguous times (overview) [00:45, 21:45]
+
+Slide 7-1
+- dateutil [01:00, 22:45]
+ 
+Slide 7-2
+- dateutil [01:00, 23:45]
+
+Slide 7-3
+- pytz [00:45, 24:30]
+
+Slide 8-0
+- Handling imaginary times (dateutil) [01:00, 25:30]
+
+Slide 8-1
+- pytz [00:30, 26:00]
+
+Slide 8-2
+- pytz [00:15, 26:15]
+
+Slide 8-3
+- pytz [00:30, 26:45]
+
+Slide 9-0
+- UTC and static time zones [01:30, 27:15]
+
+Slide 9-1
+- UTC and static time zones [01:00, 28:15]
+
+Slide 9-2
+- Local time [00:45, 29:00]
+
+Slide 9-3
+- Local time: windows [01:00, 30:00]
+
+Slide 9-4
+- IANA database [01:30, 31:30]
+
+Slide 9-5
+- tz.gettz() [01:30, 33:00]
+
+Slide 9-6
+- Using UTC
+
+- Naive datetimes
+
+Slide 10
+- Bloomberg is hiring
+
+Slide 11
+- Work on dateutil
+
