@@ -1,0 +1,12 @@
+files:
+    - custom.css
+
+dirs:
+    - reveal.js
+    - extras
+    - fonts
+    - images
+
+notebook: notebook.ipynb
+template: custom_template.tpl
+slides: notebook.slides.html
