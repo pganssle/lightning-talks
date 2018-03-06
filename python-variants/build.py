@@ -8,6 +8,7 @@ import logging
 import os
 import shutil
 import subprocess
+import tempfile
 
 import click
 
@@ -40,7 +41,20 @@ def get_current_git_ref():
     return branch_name
 
 
-def make_slides(config, serve=False):
+def make_nbconfig(fpath, options):
+    nbconfig = [
+        "c = get_config()"
+    ]
+
+    for option, option_val in options:
+        option_val = repr(option_val)
+        nbconfig.append(f'c.{option} = {option_val}')
+
+    with open(fpath, 'w') as f:
+        f.write('\n'.join(nbconfig))
+
+
+def make_slides(config, serve=False, browser=False):
     reveal_prefix = config.get('reveal_prefix', 'reveal.js')
 
     convert_cmd = [
@@ -49,6 +63,8 @@ def make_slides(config, serve=False):
         '--reveal-prefix={}'.format(reveal_prefix)
     ]
 
+    nbconfig_options = []
+
     template_path = config.get('template', None)
     if template_path is not None:
         convert_cmd.append('--template={}'.format(template_path))
@@ -56,10 +72,22 @@ def make_slides(config, serve=False):
     if serve:
         convert_cmd.extend(['--post', 'serve'])
 
-    convert_cmd.append(config.get('notebook', 'notebook.ipynb'))
+        if not browser:
+            nbconfig_options.append(('ServePostProcessor.open_in_browser', False))
 
-    return subprocess.check_call(convert_cmd)
+    with tempfile.TemporaryDirectory() as td:
+        if nbconfig_options:
+            # For whatever reason --config only seems to work with a proper file
+            nbconfig_path = os.path.join(td, 'nbconfig.py')
+            make_nbconfig(nbconfig_path, nbconfig_options)
 
+            convert_cmd.extend(['--config', nbconfig_path])
+
+        convert_cmd.append(config.get('notebook', 'notebook.ipynb'))
+
+        rv = subprocess.check_call(convert_cmd)
+
+    return rv
 
 @click.group()
 def cli():
@@ -71,13 +99,15 @@ def cli():
               default='build_config.yml')
 @click.option('--serve', is_flag=True, default=False,
               help='Whether or not to serve the notebook after the build.')
-def make(config, serve):
+@click.option('--browser', is_flag=True, default=False,
+              help='Whether or not to open the notebook in browser when serving')
+def make(config, serve, browser):
     """
     Used to build the notebook in the local folder (on the local branch).
     """
     conf = load_config(config)
 
-    make_slides(conf, serve=serve)
+    make_slides(conf, serve=serve, browser=browser)
 
 
 @cli.command()
