@@ -43,7 +43,7 @@
 <meta name="apple-mobile-web-app-capable" content="yes" />
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
 
-<title>{{resources['metadata']['name']}} slides</title>
+<title>variants slides</title>
 
 <!-- General and theme style sheets -->
 <link rel="stylesheet" href="{{resources.reveal.url_prefix}}/css/reveal.css">
@@ -167,6 +167,10 @@ a.anchor-link {
 <div class="reveal">
 <div class="slides">
 {{ super() }}
+</div>
+<div class="footer">
+<div id="twitter">@pganssle</div>
+<div id="website">https://ganssle.io</div>
 </div>
 </div>
 {% block post_slides %}
