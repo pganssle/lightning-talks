@@ -11851,8 +11851,7 @@ a.anchor-link {
 <i><a href="https://github.com/python-variants/variants">variants on Github</a></i></br>
 <i><a href="https://github.com/pganssle/lightning-talks/tree/master/python-variants">Github repo for this talk</a></i>
 </div></section></section><section><section>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -11860,8 +11859,7 @@ a.anchor-link {
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -11872,7 +11870,7 @@ a.anchor-link {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[4]:</div>
+<div class="prompt input_prompt">In&nbsp;[5]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">read_csv</span><span class="p">(</span><span class="n">filepath_or_buffer</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">IO</span><span class="p">[</span><span class="nb">str</span><span class="p">]],</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">DataFrame</span><span class="p">:</span>
@@ -11888,8 +11886,7 @@ a.anchor-link {
 </div>
 
 </div><div class="fragment">
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -11900,7 +11897,7 @@ a.anchor-link {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[5]:</div>
+<div class="prompt input_prompt">In&nbsp;[6]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">somefunc</span><span class="p">(</span><span class="n">return_extra</span><span class="p">:</span> <span class="nb">bool</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Union</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Tuple</span><span class="p">[</span><span class="nb">str</span><span class="p">]]:</span>
@@ -11923,7 +11920,9 @@ a.anchor-link {
 
 
 <div class="output_area">
+
 <div class="prompt"></div>
+
 
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>Foo
@@ -11936,8 +11935,7 @@ a.anchor-link {
 </div>
 
 </div></div></section><section>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -11947,10 +11945,10 @@ a.anchor-link {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[6]:</div>
+<div class="prompt input_prompt">In&nbsp;[7]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">itertools</span> <span class="k">as</span> <span class="nn">it</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">itertools</span> <span class="k">import</span> <span class="n">chain</span>
 
 <span class="n">to_chain</span> <span class="o">=</span> <span class="p">[(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span> <span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">),</span> <span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">)]</span>
 </pre></div>
@@ -11962,10 +11960,10 @@ a.anchor-link {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[7]:</div>
+<div class="prompt input_prompt">In&nbsp;[8]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">c</span> <span class="o">=</span> <span class="n">it</span><span class="o">.</span><span class="n">chain</span><span class="p">(</span><span class="o">*</span><span class="n">to_chain</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">c</span> <span class="o">=</span> <span class="n">chain</span><span class="p">(</span><span class="o">*</span><span class="n">to_chain</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">c</span><span class="p">))</span>
 </pre></div>
 
@@ -11978,7 +11976,9 @@ a.anchor-link {
 
 
 <div class="output_area">
+
 <div class="prompt"></div>
+
 
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>[1, 2, 3, 4, 5, 6, 7]
@@ -11992,10 +11992,10 @@ a.anchor-link {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[8]:</div>
+<div class="prompt input_prompt">In&nbsp;[9]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">list</span><span class="p">(</span><span class="n">it</span><span class="o">.</span><span class="n">chain</span><span class="o">.</span><span class="n">from_iterable</span><span class="p">(</span><span class="n">to_chain</span><span class="p">))</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">list</span><span class="p">(</span><span class="n">chain</span><span class="o">.</span><span class="n">from_iterable</span><span class="p">(</span><span class="n">to_chain</span><span class="p">))</span>
 </pre></div>
 
 </div>
@@ -12007,7 +12007,9 @@ a.anchor-link {
 
 
 <div class="output_area">
-<div class="prompt output_prompt">Out[8]:</div>
+
+<div class="prompt output_prompt">Out[9]:</div>
+
 
 
 
@@ -12021,8 +12023,7 @@ a.anchor-link {
 </div>
 
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -12034,8 +12035,7 @@ a.anchor-link {
 </div>
 </div>
 </div></section></section><section><section>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -12043,8 +12043,7 @@ a.anchor-link {
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -12055,8 +12054,7 @@ a.anchor-link {
 </div>
 </div>
 </div><div class="fragment">
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -12067,8 +12065,7 @@ a.anchor-link {
 </div>
 </div>
 </div></div><div class="fragment">
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -12081,7 +12078,7 @@ a.anchor-link {
 </div></div><div class="fragment">
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[9]:</div>
+<div class="prompt input_prompt">In&nbsp;[10]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">variants</span>
@@ -12099,7 +12096,7 @@ a.anchor-link {
 </div></div><div class="fragment">
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[10]:</div>
+<div class="prompt input_prompt">In&nbsp;[11]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="nd">@print_text</span><span class="o">.</span><span class="n">variant</span><span class="p">(</span><span class="s1">&#39;from_stream&#39;</span><span class="p">)</span>
@@ -12115,7 +12112,7 @@ a.anchor-link {
 </div></div><div class="fragment">
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[11]:</div>
+<div class="prompt input_prompt">In&nbsp;[12]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="nd">@print_text</span><span class="o">.</span><span class="n">variant</span><span class="p">(</span><span class="s1">&#39;from_filepath&#39;</span><span class="p">)</span>
@@ -12131,8 +12128,7 @@ a.anchor-link {
 </div>
 
 </div></div></section><section>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -12142,7 +12138,7 @@ a.anchor-link {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[12]:</div>
+<div class="prompt input_prompt">In&nbsp;[13]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">print_text</span><span class="p">(</span><span class="s1">&#39;Hello, world&#39;</span><span class="p">)</span>
@@ -12157,7 +12153,9 @@ a.anchor-link {
 
 
 <div class="output_area">
+
 <div class="prompt"></div>
+
 
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>Hello, world
@@ -12171,7 +12169,7 @@ a.anchor-link {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[13]:</div>
+<div class="prompt input_prompt">In&nbsp;[14]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">print_text</span><span class="o">.</span><span class="n">from_stream</span><span class="p">(</span><span class="n">StringIO</span><span class="p">(</span><span class="s1">&#39;Hello, world! This is from a stream!&#39;</span><span class="p">))</span>
@@ -12186,7 +12184,9 @@ a.anchor-link {
 
 
 <div class="output_area">
+
 <div class="prompt"></div>
+
 
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>Hello, world! This is from a stream!
@@ -12200,7 +12200,7 @@ a.anchor-link {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[14]:</div>
+<div class="prompt input_prompt">In&nbsp;[15]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">print_text</span><span class="o">.</span><span class="n">from_filepath</span><span class="p">(</span><span class="s1">&#39;extras/hello_world.txt&#39;</span><span class="p">)</span>
@@ -12215,7 +12215,9 @@ a.anchor-link {
 
 
 <div class="output_area">
+
 <div class="prompt"></div>
+
 
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>Hello, world! This is from a file!
@@ -12228,8 +12230,7 @@ a.anchor-link {
 </div>
 
 </div></section></section><section><section>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -12237,8 +12238,7 @@ a.anchor-link {
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -12251,7 +12251,7 @@ a.anchor-link {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[16]:</div>
+<div class="prompt input_prompt">In&nbsp;[17]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">print_text_from_filepath</span><span class="p">(</span><span class="n">fpath</span><span class="p">):</span>
@@ -12269,7 +12269,9 @@ a.anchor-link {
 
 
 <div class="output_area">
+
 <div class="prompt"></div>
+
 
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>Hello, world! This is from a file!
@@ -12282,8 +12284,7 @@ a.anchor-link {
 </div>
 
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -12297,9 +12298,37 @@ a.anchor-link {
 
 </div>
 </div>
+</div></section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Autodocument-with-sphinx">Autodocument with sphinx<a class="anchor-link" href="#Autodocument-with-sphinx">&#182;</a></h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Using the <code>sphinx_autodoc_variants</code> sphinx extension:</p>
+<div class="highlight"><pre><span></span><span class="p">..</span> <span class="ow">automodule</span><span class="p">::</span> text_print
+    <span class="nc">:members:</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><img src="images/sphinx_docs_image.png" alt="text_print module documentation"></p>
+
+</div>
+</div>
 </div></section></section><section><section>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -12307,8 +12336,7 @@ a.anchor-link {
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -12318,12 +12346,11 @@ a.anchor-link {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[17]:</div>
+<div class="prompt input_prompt">In&nbsp;[19]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="nd">@print_text</span><span class="o">.</span><span class="n">variant</span><span class="p">(</span><span class="s1">&#39;from_url&#39;</span><span class="p">)</span>
 <span class="k">def</span> <span class="nf">print_text</span><span class="p">(</span><span class="n">url</span><span class="p">):</span>
-    <span class="kn">import</span> <span class="nn">requests</span>
     <span class="n">r</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
     <span class="n">print_text</span><span class="p">(</span><span class="n">r</span><span class="o">.</span><span class="n">text</span><span class="p">)</span>
 </pre></div>
@@ -12335,7 +12362,7 @@ a.anchor-link {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[18]:</div>
+<div class="prompt input_prompt">In&nbsp;[21]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">print_text</span><span class="p">(</span><span class="s1">&#39;Hello, world!&#39;</span><span class="p">)</span>
@@ -12352,13 +12379,14 @@ a.anchor-link {
 
 
 <div class="output_area">
+
 <div class="prompt"></div>
+
 
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>Hello, world!
 Hello, world! This is from a file!
 
-Hello, world! (from url)
 </pre>
 </div>
 </div>
@@ -12367,8 +12395,7 @@ Hello, world! (from url)
 </div>
 
 </div></section></section><section><section>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -12376,8 +12403,7 @@ Hello, world! (from url)
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -12387,7 +12413,7 @@ Hello, world! (from url)
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[27]:</div>
+<div class="prompt input_prompt">In&nbsp;[30]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">datetime</span> <span class="k">import</span> <span class="n">date</span><span class="p">,</span> <span class="n">timedelta</span>
@@ -12409,7 +12435,7 @@ Hello, world! (from url)
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[28]:</div>
+<div class="prompt input_prompt">In&nbsp;[31]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">date_range</span><span class="p">(</span><span class="n">date</span><span class="p">(</span><span class="mi">2018</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">14</span><span class="p">),</span> <span class="n">date</span><span class="p">(</span><span class="mi">2018</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">18</span><span class="p">))</span>
@@ -12424,12 +12450,14 @@ Hello, world! (from url)
 
 
 <div class="output_area">
-<div class="prompt output_prompt">Out[28]:</div>
+
+<div class="prompt output_prompt">Out[31]:</div>
+
 
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>&lt;generator object date_range at 0x7f26a5f10728&gt;</pre>
+<pre>&lt;generator object date_range at 0x7f9e9b385eb8&gt;</pre>
 </div>
 
 </div>
@@ -12440,7 +12468,7 @@ Hello, world! (from url)
 </div><div class="fragment">
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[29]:</div>
+<div class="prompt input_prompt">In&nbsp;[32]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="nd">@date_range</span><span class="o">.</span><span class="n">variant</span><span class="p">(</span><span class="s1">&#39;eager&#39;</span><span class="p">)</span>
@@ -12455,7 +12483,7 @@ Hello, world! (from url)
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[30]:</div>
+<div class="prompt input_prompt">In&nbsp;[33]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">date_range</span><span class="o">.</span><span class="n">eager</span><span class="p">(</span><span class="n">date</span><span class="p">(</span><span class="mi">2018</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">14</span><span class="p">),</span> <span class="n">date</span><span class="p">(</span><span class="mi">2018</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">18</span><span class="p">))</span>
@@ -12470,7 +12498,9 @@ Hello, world! (from url)
 
 
 <div class="output_area">
-<div class="prompt output_prompt">Out[30]:</div>
+
+<div class="prompt output_prompt">Out[33]:</div>
+
 
 
 
@@ -12487,8 +12517,7 @@ Hello, world! (from url)
 </div>
 
 </div></div></section></section><section><section>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -12496,8 +12525,7 @@ Hello, world! (from url)
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -12507,23 +12535,23 @@ Hello, world! (from url)
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[31]:</div>
+<div class="prompt input_prompt">In&nbsp;[34]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">asyncio</span>
 <span class="kn">import</span> <span class="nn">time</span>
 
 <span class="nd">@variants</span><span class="o">.</span><span class="n">primary</span>
-<span class="k">def</span> <span class="nf">myfunc</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
-    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
-        <span class="k">yield</span> <span class="n">i</span>
-        <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mf">0.5</span><span class="p">)</span>
-
-<span class="nd">@myfunc</span><span class="o">.</span><span class="n">variant</span><span class="p">(</span><span class="s1">&#39;async&#39;</span><span class="p">)</span>
 <span class="k">async</span> <span class="k">def</span> <span class="nf">myfunc</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
     <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
         <span class="k">yield</span> <span class="n">i</span>
         <span class="k">await</span> <span class="n">asyncio</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mf">0.5</span><span class="p">)</span>
+        
+<span class="nd">@myfunc</span><span class="o">.</span><span class="n">variant</span><span class="p">(</span><span class="s1">&#39;sync&#39;</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">myfunc</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+        <span class="k">yield</span> <span class="n">i</span>
+        <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mf">0.5</span><span class="p">)</span>
 </pre></div>
 
 </div>
@@ -12533,7 +12561,7 @@ Hello, world! (from url)
 </div><div class="fragment">
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[32]:</div>
+<div class="prompt input_prompt">In&nbsp;[35]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">myfunc</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>
@@ -12548,12 +12576,14 @@ Hello, world! (from url)
 
 
 <div class="output_area">
-<div class="prompt output_prompt">Out[32]:</div>
+
+<div class="prompt output_prompt">Out[35]:</div>
+
 
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>&lt;generator object myfunc at 0x7f26a4f76af0&gt;</pre>
+<pre>&lt;async_generator object myfunc at 0x7f9e9b37d730&gt;</pre>
 </div>
 
 </div>
@@ -12564,10 +12594,10 @@ Hello, world! (from url)
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[33]:</div>
+<div class="prompt input_prompt">In&nbsp;[37]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">myfunc</span><span class="o">.</span><span class="k">async</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">myfunc</span><span class="o">.</span><span class="n">sync</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>
 </pre></div>
 
 </div>
@@ -12579,12 +12609,14 @@ Hello, world! (from url)
 
 
 <div class="output_area">
-<div class="prompt output_prompt">Out[33]:</div>
+
+<div class="prompt output_prompt">Out[37]:</div>
+
 
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>&lt;async_generator object myfunc at 0x7f26a4fe4d48&gt;</pre>
+<pre>&lt;generator object myfunc at 0x7f9e9b2d7780&gt;</pre>
 </div>
 
 </div>
@@ -12593,8 +12625,7 @@ Hello, world! (from url)
 </div>
 
 </div></div></section><section>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -12604,7 +12635,7 @@ Hello, world! (from url)
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[34]:</div>
+<div class="prompt input_prompt">In&nbsp;[38]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">functools</span> <span class="k">import</span> <span class="n">lru_cache</span>
@@ -12630,7 +12661,7 @@ Hello, world! (from url)
 </div><div class="fragment">
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[35]:</div>
+<div class="prompt input_prompt">In&nbsp;[39]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="n">get_config</span><span class="p">()</span>
@@ -12645,7 +12676,9 @@ Hello, world! (from url)
 
 
 <div class="output_area">
+
 <div class="prompt"></div>
+
 
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>Retrieving configuration!
@@ -12659,7 +12692,7 @@ Hello, world! (from url)
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[36]:</div>
+<div class="prompt input_prompt">In&nbsp;[40]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">b</span> <span class="o">=</span> <span class="n">get_config</span><span class="p">()</span>
@@ -12672,7 +12705,7 @@ Hello, world! (from url)
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[37]:</div>
+<div class="prompt input_prompt">In&nbsp;[41]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">c</span> <span class="o">=</span> <span class="n">get_config</span><span class="o">.</span><span class="n">nocache</span><span class="p">()</span>
@@ -12687,7 +12720,9 @@ Hello, world! (from url)
 
 
 <div class="output_area">
+
 <div class="prompt"></div>
+
 
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>Retrieving configuration!
@@ -12699,8 +12734,7 @@ Hello, world! (from url)
 </div>
 
 </div></div></section></section><section><section>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -12708,8 +12742,7 @@ Hello, world! (from url)
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -12724,13 +12757,11 @@ Hello, world! (from url)
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="To-Do:">To Do:<a class="anchor-link" href="#To-Do:">&#182;</a></h2><ul>
-<li><a href="https://github.com/python-variants/variants/issues/5">Improve Sphinx integration</a></li>
 <li><a href="https://github.com/python-variants/variants/issues/7">Preserve introspection</a></li>
 <li><a href="https://github.com/python-variants/variants/issues/26">Add compiled backend</a></li>
 </ul>
@@ -12739,9 +12770,12 @@ Hello, world! (from url)
 </div>
 </div><div style="text-align:center"><img src="images/pganssle-logos.svg" style="border: 0px; box-shadow: none; height: 40px; display:inline"></div></section></section>
 </div>
-<div class="footer">
+<div class="footerleft">
 <div id="twitter">@pganssle</div>
 <div id="website">https://ganssle.io</div>
+</div>
+<div class="footer">
+<img src='images/bloomberg-logo-alpha.svg'>
 </div>
 </div>
 

@@ -355,11 +355,23 @@ body {
   font-size: 3rem;
 }
 
-.reveal .footer div#website {
+.reveal .footerleft {
+  position: absolute;
+  left: 20px;
+  bottom: 15px;
+  width: 25%;
+  height: 7%;
+  text-align: left;
+  font-size: 2.5rem;
+  color: #7f7f7f;
+}
+
+
+.reveal .footerleft div#website {
     text-decoration: underline;
 }
 
-.reveal .footer div#twitter {
+.reveal .footerleft div#twitter {
     font-weight: bold;
 }
 
