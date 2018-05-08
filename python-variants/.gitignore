@@ -1,1 +1,7 @@
 notebook.slides.html
+
+sphinxproj/build
+
+.mypy_cache
+*.py[co]
+__pycache__/
