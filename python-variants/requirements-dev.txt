@@ -1,0 +1,6 @@
+Sphinx>=1.7.3
+sphinx_autodoc_variants
+Flask-Sphinx-Themes
+variants>=0.2.0
+click
+ruamel.yaml
