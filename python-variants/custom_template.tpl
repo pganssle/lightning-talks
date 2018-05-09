@@ -168,12 +168,12 @@ a.anchor-link {
 <div class="slides">
 {{ super() }}
 </div>
-<div class="footerleft">
-<div id="twitter">@pganssle</div>
-<div id="website">https://ganssle.io</div>
+<div class="footer">
+<span id="website">https://ganssle.io</span>
+<span id="twitter">@pganssle</span>
+<span id="logo"><img src='images/bloomberg-logo-alpha.svg'></span>
 </div>
 <div class="footer">
-<img src='images/bloomberg-logo-alpha.svg'>
 </div>
 </div>
 {% block post_slides %}
