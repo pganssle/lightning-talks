@@ -346,33 +346,29 @@ body {
 }
 
 .reveal .footer {
-  position: absolute; 
-  right: 20px;
-  bottom: 15px;
-  width: 25%;
-  height: 8%;
-  text-align: right;
-  font-size: 3rem;
-}
-
-.reveal .footerleft {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
   position: absolute;
+  right: 20px;
   left: 20px;
-  bottom: 15px;
-  width: 25%;
+  bottom: 0.5em;
   height: 7%;
-  text-align: left;
-  font-size: 2.5rem;
+  font-size: 3rem;
   color: #7f7f7f;
 }
 
 
-.reveal .footerleft div#website {
+.reveal .footer span#website {
     text-decoration: underline;
 }
 
-.reveal .footerleft div#twitter {
+.reveal .footer span#twitter {
     font-weight: bold;
+}
+
+.reveal .footer span#logo img {
+    margin-bottom: -1em;
 }
 
 .reveal .slides>section {
